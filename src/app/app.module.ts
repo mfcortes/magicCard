@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+/* Se importan modilos de firebase*/
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -12,6 +13,8 @@ import { AdmincardComponent } from './components/containercard/admincard/adminca
 import { CardComponent } from './components/containercard/card/card.component';
 import { ListcardComponent } from './components/containercard/listcard/listcard.component';
 
+/*se importan los servicios*/
+import { CrudcardService } from './services/crudcard.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,7 @@ import { ListcardComponent } from './components/containercard/listcard/listcard.
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [CrudcardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
